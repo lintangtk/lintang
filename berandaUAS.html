@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda Simpan Pinjam Dandelion</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f6fb;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #536b98, #536b98);
+            color: white;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            letter-spacing: 1.5px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            background: linear-gradient(90deg, #536b98, #536b98);
+            padding: 0.75rem 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: transform 0.2s, color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+            transform: scale(1.1);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background: #ffd700;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        main {
+            padding: 3rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        main h2 {
+            text-align: center;
+            color: #536b98;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #536b98;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .info-section {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .info-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #536b98;
+        }
+
+        .info-section p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .steps {
+            display: grid;
+            gap: 1.5rem;
+            grid-template-columns: 1fr;
+        }
+
+        .steps div {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .steps div:hover {
+            background-color: #f0f0f0;
+        }
+
+        .steps div span {
+            background-color: #536b98;
+            color: white;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #536b98, #536b98);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: #536b98;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: #536b98;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            margin: 0.5rem 0;
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #ffd700;
+        }
+
+        .contact-info a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #ffd700;
+            bottom: -3px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .steps div {
+                font-size: 0.9rem;
+            }
+
+            main h2 {
+                font-size: 1.6rem;
+            }
+
+            .info-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Simpan Pinjam Dandelion</h1>
+    </header>
+
+    <nav>
+        <a href="UAS_WEB1.html">Halaman Utama</a>
+        <a href="berandaUAS.html">Beranda</a>
+        <a href="ProfilUAS.html">Profil</a>
+        <a href="loginUAS contoh (2).html">Login</a>
+    </nav>
+
+    <main>
+        <h2>Langkah Menggunakan Aplikasi</h2>
+        <div class="info-section">
+            <h3>Proses Penggunaan</h3>
+            <div class="steps">
+                <div><span>1</span>Buka aplikasi melalui browser di perangkat Anda.</div>
+                <div><span>2</span>Login dengan akun yang telah terdaftar atau buat akun baru jika belum memiliki.</div>
+                <div><span>3</span>Pilih menu "Transaksi" untuk melakukan simpanan atau pinjaman.</div>
+                <div><span>4</span>Isi formulir transaksi dengan informasi yang diperlukan.</div>
+                <div><span>5</span>Submit formulir untuk menyelesaikan transaksi.</div>
+                <div><span>6</span>Periksa riwayat transaksi Anda pada menu "Transaksi".</div>
+                <div><span>7</span>Logout jika telah selesai menggunakan aplikasi.</div>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>Kontak Pengaduan</h3>
+            <p>Jika Anda memiliki pertanyaan atau pengaduan, jangan ragu untuk menghubungi kami:</p>
+            <a href="tel:+6280012345678">Hotline: 0800-1234-5678</a>
+            <a href="mailto:support@dandelion.com">Email: support@dandelion.com</a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Simpan Pinjam Dandelion. Semua Hak Dilindungi.
+    </footer>
+
+</body>
+</html>

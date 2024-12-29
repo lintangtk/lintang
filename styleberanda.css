@@ -1,0 +1,50 @@
+/* Style untuk Halaman Beranda */
+#beranda {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+#beranda h2 {
+    color: #0056b3;
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+}
+
+#beranda p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#beranda ol {
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+#beranda ol li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#beranda ol li strong {
+    color: #0056b3;
+}
+
+/* Tambahan gaya untuk menjaga tampilan tetap responsif */
+@media (max-width: 768px) {
+    #beranda {
+        padding: 15px;
+    }
+
+    #beranda h2 {
+        font-size: 20px;
+    }
+
+    #beranda p, #beranda ol li {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login atau Daftar - Aplikasi Simpan Pinjam</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f6fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 90vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            text-align: center;
+            color: #536b98;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #536b98;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .btn {
+            padding: 12px;
+            color: white;
+            background-color: #536b98;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3e5c8d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 20px;
+            color: #777;
+        }
+
+        .footer a {
+            color: #536b98;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="formTitle">Masuk</h1>
+        
+        <!-- Form Login -->
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Masukkan username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Masukkan password" required>
+            <button type="submit" class="btn">Login</button>
+        </form>
+
+        <!-- Form Pendaftaran -->
+        <form id="registerForm" class="hidden">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Masukkan email" required>
+
+            <label for="gender">Jenis Kelamin:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Pilih jenis kelamin</option>
+                <option value="Perempuan">Perempuan</option>
+                <option value="Laki-laki">Laki-laki</option>
+            </select>
+
+            <label for="dob">Tanggal Lahir:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <label for="statusPernikahan">Status Pernikahan:</label>
+            <select id="statusPernikahan" name="statusPernikahan" required>
+                <option value="">Pilih status</option>
+                <option value="Belum Menikah">Belum Menikah</option>
+                <option value="Menikah">Menikah</option>
+            </select>
+
+            <label for="nohp">Nomor HP:</label>
+            <input type="tel" id="nohp" name="nohp" placeholder="Masukkan nomor HP" required>
+
+            <label for="alamat">Alamat:</label>
+            <textarea class="textarea" id="alamat" name="alamat" placeholder="Masukkan alamat lengkap" required></textarea>
+
+            <label for="provinsi">Provinsi:</label>
+            <select id="provinsi" name="provinsi" required>
+                <option value="">Pilih Provinsi</option>
+                <option value="Aceh">Aceh</option>
+                <option value="Bali">Bali</option>
+                <option value="Banten">Banten</option>
+                <option value="Bengkulu">Bengkulu</option>
+                <option value="Gorontalo">Gorontalo</option>
+                <option value="Jakarta">Jakarta</option>
+                <option value="Jambi">Jambi</option>
+                <option value="Jawa Barat">Jawa Barat</option>
+                <option value="Jawa Tengah">Jawa Tengah</option>
+                <option value="Jawa Timur">Jawa Timur</option>
+                <option value="Kalimantan Barat">Kalimantan Barat</option>
+                <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                <option value="Kalimantan Timur">Kalimantan Timur</option>
+                <option value="Kalimantan Utara">Kalimantan Utara</option>
+                <option value="Kepulauan Riau">Kepulauan Riau</option>
+                <option value="Lampung">Lampung</option>
+                <option value="Maluku">Maluku</option>
+                <option value="Maluku Utara">Maluku Utara</option>
+                <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                <option value="Papua">Papua</option>
+                <option value="Papua Barat">Papua Barat</option>
+                <option value="Riau">Riau</option>
+                <option value="Sulawesi Barat">Sulawesi Barat</option>
+                <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                <option value="Sulawesi Utara">Sulawesi Utara</option>
+                <option value="Sumatera Barat">Sumatera Barat</option>
+                <option value="Sumatera Selatan">Sumatera Selatan</option>
+                <option value="Sumatera Utara">Sumatera Utara</option>
+                <option value="Yogyakarta">Yogyakarta</option>
+            </select>
+
+            <label for="nik">Nomor Induk Kependudukan (NIK):</label>
+            <input type="text" id="nik" name="nik" placeholder="Masukkan NIK" required>
+
+            <label for="pekerjaan">Jenis Pekerjaan:</label>
+            <select id="pekerjaan" name="pekerjaan" required>
+                <option value="">Pilih jenis pekerjaan</option>
+                <option value="Karyawan">Karyawan</option>
+                <option value="Wirausaha">Wirausaha</option>
+                <option value="Mahasiswa">Mahasiswa</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
+
+            <label for="usernameReg">Username:</label>
+            <input type="text" id="usernameReg" name="usernameReg" placeholder="Masukkan username" required>
+            <label for="passwordReg">Password:</label>
+            <input type="password" id="passwordReg" name="passwordReg" placeholder="Masukkan password" required>
+            <label for="confirmPassword">Konfirmasi Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Masukkan kembali password" required>
+            <button type="submit" class="btn">Daftar</button>
+        </form>
+
+        <!-- Bagian Footer untuk Teks Bawah -->
+        <div class="footer">
+            <p>Belum punya akun? <a id="switchLink">Daftar Akun</a></p>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const registerForm = document.getElementById('registerForm');
+        const formTitle = document.getElementById('formTitle');
+        const switchLink = document.getElementById('switchLink');
+
+        // Event untuk mengubah tampilan form
+        switchLink.addEventListener('click', () => {
+            if (loginForm.classList.contains('hidden')) {
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
+                formTitle.textContent = 'Masuk';
+            } else {
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
+                formTitle.textContent = 'Daftar Akun';
+            }
+        });
+
+        // Simpan data ke localStorage saat pendaftaran
+        registerForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('usernameReg').value;
+            const password = document.getElementById('passwordReg').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('Password dan Konfirmasi Password tidak cocok!');
+                return;
+            }
+
+            const userData = {
+                username: username,
+                password: password
+            };
+
+            // Simpan data ke localStorage
+            localStorage.setItem('user', JSON.stringify(userData));
+            alert('Pendaftaran berhasil! Anda akan diarahkan ke halaman transaksi.');
+            window.location.href = "transaksi.html";
+        });
+
+        // Validasi login dengan data di localStorage
+        loginForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (user && username === user.username && password === user.password) {
+                alert('Login berhasil!');
+                window.location.href = "transaksi.html";
+            } else {
+                alert('Username atau password salah!');
+            }
+        });
+    </script>
+</body>
+</html>

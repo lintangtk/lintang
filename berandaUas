@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Simpan Pinjam</title>
+    <link rel="stylesheet" href="styleberanda.css">
+</head>
+<body>
+    <header>
+        <h1>Aplikasi Simpan Pinjam</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="berandaUas">Beranda</a></li>
+            <li><a href="#transaksi">Transaksi</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#login">Login</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="beranda">
+            <h2>Beranda</h2>
+            <p>Selamat datang di Aplikasi Simpan Pinjam. Berikut adalah panduan langkah-langkah untuk menggunakan aplikasi ini:</p>
+            <ol>
+                <li><strong>Pilih Menu Transaksi:</strong> Masuk ke halaman transaksi untuk menambahkan data simpan pinjam Anda.</li>
+                <li><strong>Isi Formulir:</strong> Masukkan nama, jumlah uang, dan kategori transaksi pada formulir yang tersedia.</li>
+                <li><strong>Tambah Transaksi:</strong> Klik tombol "Tambah Transaksi" untuk menyimpan data Anda ke dalam sistem.</li>
+                <li><strong>Lihat Transaksi:</strong> Data transaksi akan tampil pada tabel di bawah formulir transaksi.</li>
+                <li><strong>Profil Pengguna:</strong> Masuk ke halaman profil untuk melihat informasi mengenai aplikasi dan pengguna.</li>
+                <li><strong>Login:</strong> Untuk fitur tambahan, masuk menggunakan akun Anda melalui halaman login.</li>
+            </ol>
+        </section>
+
+    <footer>
+        <p>&copy; 2024 Aplikasi Simpan Pinjam</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

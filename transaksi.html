@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Aplikasi Simpan Pinjam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; 
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #536b98; 
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #536b98;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            background-color:#536b98; 
+        }
+
+        main {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #536b98;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            margin-bottom: 40px;
+        }
+
+        label {
+            display: block;
+            margin: 8px 0;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #536b98;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #536b98; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #536b98;
+            color: white;
+        }
+
+        table td {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color:#536b98; 
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        #riwayatAngsuran {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #riwayatList {
+            margin-top: 10px;
+        }
+
+        .angsuran-form {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .angsuran-form input {
+            width: calc(100% - 100px);
+            display: inline-block;
+        }
+
+        .angsuran-form .btn {
+            width: 80px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .rincianAngsuran {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .rincianAngsuran table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .rincianAngsuran th, .rincianAngsuran td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .rincianAngsuran th {
+            background-color: #536b98; 
+            color: white;
+        }
+
+        #riwayatSimpan {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #riwayatSimpan ul {
+            margin-top: 10px;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aplikasi Simpan Pinjam</h1>
+    </header>
+
+    <nav>
+        <a href="UAS_WEB1.html"></a>
+        <a href="berandaUAS.html">Beranda</a>
+        <a href="transaksi.html">Transaksi</a>
+        <a href="ProfilUAS.html">Profil</a>
+        <a href="loginUAS contoh (2).html">Login</a>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h2>Formulir Transaksi</h2>
+            <div class="form-container">
+                <form id="transaksiForm">
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+
+                    <label for="jumlah">Jumlah Transaksi (Rp):</label>
+                    <input type="number" id="jumlah" name="jumlah" required placeholder="Masukkan jumlah transaksi">
+
+                    <label for="kategori">Kategori:</label>
+                    <select id="kategori" name="kategori" required>
+                        <option value="Simpan">Simpan</option>
+                        <option value="Pinjam">Pinjam</option>
+                    </select>
+
+                    <label for="metodePembayaran">Metode Pembayaran:</label>
+                    <select id="metodePembayaran" name="metodePembayaran" required>
+                        <option value="ATM">Debit ATM (ATM001)</option>
+                        <option value="E-Wallet">E-Wallet (EWALLET001)</option>
+                        <option value="Top-Up">Top-Up (Indomaret/Alfamart) (TOPUP001)</option>
+                    </select>
+
+                    <button type="submit" class="btn">Kirim</button>
+                    <div id="error-message" class="error hidden">Jumlah pinjaman melebihi batas maksimum 100 juta Rupiah.</div>
+                </form>
+            </div>
+
+            <h3>Daftar Transaksi Simpan</h3>
+            <table id="simpanTable">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Total Simpanan</th>
+                        <th>Riwayat Transaksi</th>
+                    </tr>
+                </thead>
+                <tbody id="simpanList">
+                    <!-- Data transaksi simpan akan ditambahkan di sini -->
+                </tbody>
+            </table>
+
+            <h3>Daftar Transaksi Pinjam</h3>
+            <table id="pinjamTable">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Total Pinjaman</th>
+                        <th>Riwayat Transaksi</th>
+                    </tr>
+                </thead>
+                <tbody id="pinjamList">
+                    <!-- Data transaksi pinjam akan ditambahkan di sini -->
+                </tbody>
+            </table>
+
+            <!-- Riwayat Transaksi Simpan -->
+            <div id="riwayatSimpan" class="hidden">
+                <h3>Riwayat Simpanan</h3>
+                <ul id="riwayatListSimpan"></ul>
+            </div>
+
+            <!-- Riwayat Transaksi Pinjaman -->
+            <div id="riwayatAngsuran" class="hidden">
+                <h3>Riwayat Angsuran</h3>
+                <ul id="riwayatList"></ul>
+
+                <div class="rincianAngsuran">
+                    <h4>Rincian Angsuran Per Bulan:</h4>
+                    <table id="rincianAngsuranTable">
+                        <thead>
+                            <tr>
+                                <th>Bulan</th>
+                                <th>Angsuran</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rincianAngsuranBody">
+                            <!-- Rincian angsuran bulanan akan ditampilkan di sini -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="angsuran-form">
+                    <label for="angsuranInput">Masukkan Jumlah Pembayaran:</label>
+                    <input type="number" id="angsuranInput" placeholder="Masukkan jumlah angsuran">
+                    <button class="btn" id="angsuranSubmit">Bayar</button>
+                    <div id="success-message" class="success-message hidden">Pembayaran berhasil!</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 Universitas Pamulang. Semua Hak Dilindungi.
+    </footer>
+
+    <script>
+        const transaksiData = {
+            simpan: {},
+            pinjam: {}
+        };
+
+        document.getElementById('transaksiForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nama = document.getElementById('nama').value;
+            let jumlahTransaksi = document.getElementById('jumlah').value;
+            jumlahTransaksi = parseInt(jumlahTransaksi.replace(/[^0-9]/g, ''));
+
+            const kategori = document.getElementById('kategori').value;
+            const metodePembayaran = document.getElementById('metodePembayaran').value;
+
+            const tanggalTransaksi = new Date().toLocaleDateString('id-ID');  // Format tanggal Indonesia
+
+            if (kategori === 'Pinjam' && jumlahTransaksi > 100000000) {
+                document.getElementById('error-message').classList.remove('hidden');
+                return;
+            } else {
+                document.getElementById('error-message').classList.add('hidden');
+            }
+
+            if (kategori === 'Simpan') {
+                if (!transaksiData.simpan[nama]) transaksiData.simpan[nama] = [];
+                transaksiData.simpan[nama].push({ jumlah: jumlahTransaksi, metode: metodePembayaran, tanggal: tanggalTransaksi });
+                updateSimpanTable();
+            } else if (kategori === 'Pinjam') {
+                if (!transaksiData.pinjam[nama]) transaksiData.pinjam[nama] = { total: 0, riwayat: [], angsuran: [] };
+                const bunga = 0.05;
+                const totalBayar = jumlahTransaksi + (jumlahTransaksi * bunga);
+
+                transaksiData.pinjam[nama].total += totalBayar;
+                transaksiData.pinjam[nama].riwayat.push({ jumlah: totalBayar, metode: metodePembayaran, tanggal: tanggalTransaksi });
+
+                updatePinjamTable();
+            }
+
+            this.reset();
+        });
+
+        function updateSimpanTable() {
+            const simpanList = document.getElementById('simpanList');
+            simpanList.innerHTML = '';
+
+            for (const nama in transaksiData.simpan) {
+                const totalSimpan = transaksiData.simpan[nama].reduce((acc, item) => acc + item.jumlah, 0);
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${nama}</td>
+                    <td>Rp ${new Intl.NumberFormat('id-ID').format(totalSimpan)}</td>
+                    <td><button onclick="lihatRiwayatSimpan('${nama}')">Lihat Riwayat</button></td>
+                `;
+                simpanList.appendChild(row);
+            }
+        }
+
+        function updatePinjamTable() {
+            const pinjamList = document.getElementById('pinjamList');
+            pinjamList.innerHTML = '';
+
+            for (const nama in transaksiData.pinjam) {
+                const totalPinjaman = transaksiData.pinjam[nama].total;
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${nama}</td>
+                    <td>Rp ${new Intl.NumberFormat('id-ID').format(totalPinjaman)}</td>
+                    <td><button onclick="lihatRiwayatPinjam('${nama}')">Lihat Riwayat</button></td>
+                `;
+                pinjamList.appendChild(row);
+            }
+        }
+
+        function lihatRiwayatSimpan(nama) {
+            const riwayatSimpan = document.getElementById('riwayatSimpan');
+            const riwayatListSimpan = document.getElementById('riwayatListSimpan');
+            riwayatListSimpan.innerHTML = '';
+
+            transaksiData.simpan[nama].forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Transaksi ${index + 1}: Rp ${new Intl.NumberFormat('id-ID').format(item.jumlah)} melalui ${item.metode} pada ${item.tanggal}`;
+                riwayatListSimpan.appendChild(listItem);
+            });
+
+            riwayatSimpan.classList.remove('hidden');
+        }
+
+        function lihatRiwayatPinjam(nama) {
+            const riwayatAngsuran = document.getElementById('riwayatAngsuran');
+            const riwayatList = document.getElementById('riwayatList');
+            riwayatList.innerHTML = '';
+
+            transaksiData.pinjam[nama].riwayat.forEach((item, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `Bulan ${index + 1}: Rp ${new Intl.NumberFormat('id-ID').format(item.jumlah)} pada ${item.tanggal}`;
+                riwayatList.appendChild(listItem);
+            });
+
+            const totalPinjaman = transaksiData.pinjam[nama].total;
+            const angsuranPerBulan = (totalPinjaman / 12).toFixed(2);
+
+            generateRincianAngsuran(angsuranPerBulan);
+            riwayatAngsuran.classList.remove('hidden');
+        }
+
+        function generateRincianAngsuran(angsuranPerBulan) {
+            const rincianAngsuranBody = document.getElementById('rincianAngsuranBody');
+            rincianAngsuranBody.innerHTML = '';
+
+            for (let i = 1; i <= 12; i++) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${i}</td>
+                    <td>Rp ${new Intl.NumberFormat('id-ID').format(angsuranPerBulan)}</td>
+                `;
+                rincianAngsuranBody.appendChild(row);
+            }
+        }
+
+        document.getElementById('angsuranSubmit').addEventListener('click', function() {
+            // Show success message when bayar is clicked
+            document.getElementById('success-message').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
